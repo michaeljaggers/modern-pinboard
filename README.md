@@ -10,11 +10,9 @@ The stylesheet will be updated automaticaly by the addon.<br>
 All stylesheets are mobile compatible.
 
 <br/>
-<br/>
 
 [![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-238b8b.svg)](https://raw.githubusercontent.com/michaeljaggers/better-pinboard/master/better-pinboard.user.css)
 
-<br/>
 <br/>
 <br/>
 
