@@ -10,39 +10,68 @@
 @author       Michael Jaggers <michael.jaggers@gmail.com> (https://michaeljaggers.com)
 ==/UserStyle== */
  
- #bookmarks {
-  padding-top:4px!important;
+body { 
+    background-color: #FEFEFE; 
 }
 
-.private {
-  background: transparent!important;
-  border: none!important;
+a {
+  color: #2196f3 !important;
 }
-
-.private .bookmark_title {
-  color: #FF2E54!important;
-}
-
-body { background-color: #FEFEFE; }
 
 #footer {
   visibility: hidden;
 }
 
-#logo span,
-.pin_logo,
+#banner { 
+    padding-bottom: 12px;
+    background-color: #FEFEFE;
+    border-bottom: 1px solid #C0C0C0 !important;
+}
+
+#logo { 
+    background: url('data:image/svg+xml;charset=UTF-8,<svg version="1.1" height="30" viewBox="0 0 32 32" width="150" xmlns="http://www.w3.org/2000/svg"><path d="m14.5 9.496-7-5.996v-3l-7 7h2.993l6.007 7v4l9.003-9z" fill="%232196f3"></path><path d="m7.885.057c-.28-.117-.604-.052-.818.163l-6.847 6.847c-.215.215-.279.537-.163.818.116.28.39.463.693.463h2.583l5.472 6.376v3.635c0 .669.81 1.001 1.28.53l3.326-3.326 9.343 8.248c.142.127.319.189.496.189.193 0 .386-.074.531-.221.28-.281.293-.732.028-1.028l-8.286-9.299 3.368-3.368c.215-.214.278-.537.163-.817-.116-.28-.39-.463-.692-.463l-3.64-.003-6.374-5.462v-2.589c0-.303-.183-.577-.463-.693zm6.072 10.063c.136.116.309.18.487.18l2.107.002-6.247 6.246v-2.103c0-.179-.064-.353-.181-.488l-5.876-6.848c-.143-.166-.351-.261-.569-.261h-1.117l4.287-4.287v1.124c0 .219.096.427.262.57z"></path></svg>') no-repeat;
+    background-position: top 3px left -58px;
+}
+
+#pinboard_name { 
+    font-size: 26px; 
+    margin-left: 35px; 
+    margin-right: 10px;
+    vertical-align: sub;
+}
+
+#logo span { 
+    color: #C0C0C0; 
+    vertical-align: text-bottom; 
+}
+
+#logo .banner_username { 
+    color: #666 !important;
+    font-weight: 900;
+    padding: 0 3px; 
+    margin-top: -2px
+}
+
+.pin_logo { 
+    display: none; 
+}
+
+#top_menu { 
+    margin-top: 10px; 
+}
+
 #timer {
-  display: none!important;
+  display: none !important;
 }
 
 #right_bar {
-  margin-left: 0!important;
+  margin-left: 0 !important;
 }
 
 .search_button {
-  margin-top: 10!important;
+  margin-top: 10 !important;
 }
-px
+
 .input#search_query_field {
   padding: 5px 2px!important;
   border: 1px solid #ccc!important;
@@ -85,7 +114,24 @@ input.reset:hover {
 }
 
 .small_username b a {
-  color: #666!important;
+  display: none;
+}
+
+#main_column .bookmark_count_box {
+    width: 150px
+}
+
+#main_column .bookmark_count { 
+    font-size: 20px; 
+    color: #000; 
+}
+
+
+#main_column .bookmark_count::after {
+    content: "bookmarks";
+    padding-left: 5px;
+    color: #666;
+    font-size: 16px
 }
 
 .user_navbar a {
@@ -101,8 +147,21 @@ input.reset:hover {
   font-weight: 900!important;
 }
 
+ #bookmarks {
+  padding-top:5px !important;
+}
+
+.private {
+  background: transparent !important;
+  border: none !important;
+}
+
+.private .bookmark_title {
+  color: #FF2E54 !important;
+}
+
 .bookmark_title  {
-  color: #369FE9!important;
+  color: #2196f3 !important;
   font-weight: bold!important;
   font-size: 16px!important;
 }
@@ -146,12 +205,10 @@ input.reset:hover {
 .bookmark:hover .when,
 .bookmark:hover .edit_links a {
   visibility:visible!important;
-  color: #369FE9!important;
+  color: #2196f3!important;
 }
 
-a {
-  color: #369FE9!important;
-}
+
 
 .bookmark:hover .when {
   color: #999!important;
@@ -167,12 +224,7 @@ a {
 }
 
 .bookmark {
-  border-bottom: 1px solid #eee!important;
-}
-
-#banner {
-  background-color: #FEFEFE;
-  border-bottom: 1px solid #eee!important;
+  border-bottom: 1px solid #F1F1F1!important;
 }
 
 .tag_table a {
