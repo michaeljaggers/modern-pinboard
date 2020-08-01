@@ -12,7 +12,7 @@ The stylesheet will be updated automaticaly by the addon.
 
 Style Preview:
 
-![Style Preview](/images/style-preview.png)
+![Style Preview](https://github.com/michaeljaggers/better-pinboard/blob/master/images/preview.png)
 <br/>
 <br/>
 <br/>
