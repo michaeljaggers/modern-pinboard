@@ -1,4 +1,7 @@
 # Better Pinboard
+
+*This stylesheet is a work-in-progress.*
+
 A UserCSS stylesheet customizing the design of social bookmarking site [Pinboard](https://pinboard.in).
 
 A [UserCSS](https://github.com/openstyles/stylus/wiki/UserCSS) compatible userstyle manager is required.  These are recommended:
