@@ -10,6 +10,8 @@
 @author       Michael Jaggers <michael.jaggers@gmail.com> (https://michaeljaggers.com)
 ==/UserStyle== */
  
+
+
 body { 
     background-color: #FEFEFE; 
 }
@@ -46,7 +48,7 @@ a {
 }
 
 #logo .banner_username { 
-    color: #666 !important;
+    color: #222 !important;
     font-weight: 900;
     padding: 0 3px; 
     margin-top: -2px
@@ -58,6 +60,27 @@ a {
 
 #top_menu { 
     margin-top: 10px; 
+}
+
+.user_navbar a {
+  color: #666 !important;
+  display: inline-block;
+  margin-top: 4px;
+  color: 
+}
+
+.rss_linkbox { 
+    margin-top: 4px;
+    width: 45px;
+    background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><circle fill="%23ee9922" cx="6.18" cy="17.82" r="2.18"/><path fill="%23ee9922" d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg>') no-repeat;
+    background-position: bottom right
+}
+
+.user_navbar .rss_link {
+    font-weight: 900;
+    font-size: 1em !important;
+    color: #555 !important;
+    width: 45px;
 }
 
 #timer {
@@ -72,22 +95,26 @@ a {
   margin-top: 10 !important;
 }
 
-.input#search_query_field {
-  padding: 5px 2px!important;
-  border: 1px solid #ccc!important;
-  border-radius: 3px!important;
+#search_query_field {
+  padding: 8px 7px !important;
+  border: 1px solid #bbb !important;
+  border-radius: 2px !important;
 }
 
 input[type="submit"],
 input[type="button"],
 input.submit,
 input.reset {
-  padding: 7px 20px 8px!important;
-  border: none!important;
-  border-radius: 3px!important;
-  background: #7FC10B!important;
-  color: white!important;
-  font-weight: bold!important;
+  padding: 8px 21px 8px !important;
+  border: none !important;
+  border-radius: 2px !important;
+  background: #333 !important;
+  color: #FFF !important;
+  font-weight: bold !important;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
 }
 
 input[type="button"],
@@ -134,9 +161,7 @@ input.reset:hover {
     font-size: 16px
 }
 
-.user_navbar a {
-  color: #999!important;
-}
+
 
 .next_prev,
 #per_page_picker a {
@@ -147,9 +172,7 @@ input.reset:hover {
   font-weight: 900!important;
 }
 
- #bookmarks {
-  padding-top:5px !important;
-}
+
 
 .private {
   background: transparent !important;
@@ -160,10 +183,16 @@ input.reset:hover {
   color: #FF2E54 !important;
 }
 
+.bookmark { 
+    padding-top: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #EEE !important;
+}
+
 .bookmark_title  {
-  color: #2196f3 !important;
+  color: #222 !important;
   font-weight: bold!important;
-  font-size: 16px!important;
+  font-size: 20px!important;
 }
 
 .bookmark_title.unread,
@@ -173,6 +202,12 @@ input.reset:hover {
 
 /* num others also bookmarked */
 .url_link { background: transparent !important; color: #666 !important; font-style: italic }
+
+.description { 
+    margin-top: 5px;
+    line-height: 130%;
+    color: #666;
+}
 
 .star {
   float:right!important;
@@ -214,17 +249,19 @@ input.reset:hover {
   color: #999!important;
 }
 
-.tag,
-.per_page_selected {
-  padding: 3px 6px;
-  background-color: #FDF0D5!important;
-  color: #FF9113!important;
-  font-weight: bold!important;
-  border: 1px solid #eee
+.bookmark .tag { 
+    display: inline-block;
+    margin-top: 8px;
 }
 
-.bookmark {
-  border-bottom: 1px solid #F1F1F1!important;
+.tag,
+.per_page_selected {
+  padding: 2px 6px;
+  background-color: #888 !important;
+  color: #FDFDFD !important;
+  font-weight: 700 !important;
+  border: 1px solid #777;
+  border-radius: 2px;
 }
 
 .tag_table a {
