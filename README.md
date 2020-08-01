@@ -18,6 +18,8 @@ Style Preview:
 ![Style Preview](https://github.com/michaeljaggers/better-pinboard/blob/master/images/preview.png)
 <br/>
 <br/>
+<br/>
+<br/>
 [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
 <br/>
 This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0
