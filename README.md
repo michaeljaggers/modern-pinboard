@@ -1,4 +1,4 @@
-# Better Pinboard
+# Modern Pinboard
 
 *This stylesheet is a work-in-progress.*
 
