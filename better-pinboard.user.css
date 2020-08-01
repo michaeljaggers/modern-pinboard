@@ -92,8 +92,15 @@ a {
 }
 
 #bulk_edit { 
-    padding-left: 15px;
+    display: inline-block;
+    margin-left: 20px;
 }
+
+#bulk_edit:hover { 
+    color: #222 !important;
+}
+
+#nextprev .edit:hover { color: #222 !important; }
 
 #timer {
   display: none !important;
@@ -167,7 +174,7 @@ input.reset:hover {
     float: right;
     padding-top: 3px;
     font-weight: 900;
-    color: #666;
+    color: #333;
     
     
 }
