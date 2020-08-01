@@ -9,6 +9,10 @@ A [UserCSS](https://github.com/openstyles/stylus/wiki/UserCSS) compatible userst
 [![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-238b8b.svg)](https://raw.githubusercontent.com/michaeljaggers/better-pinboard/master/better-pinboard.user.css)
 <br/>
 The stylesheet will be updated automaticaly by the addon.
+
+Style Preview:
+
+![Style Preview](/images/style-preview.png)
 <br/>
 <br/>
 <br/>
