@@ -43,14 +43,21 @@ a {
 
 #logo span { 
     color: #C0C0C0; 
-    vertical-align: text-bottom; 
+    vertical-align: text-bottom;
+    font-weight: 900;
 }
 
 #logo .banner_username { 
     color: #222 !important;
     font-weight: 900;
-    padding: 0 3px; 
-    margin-top: -2px
+    padding: 0 6px; 
+    margin-top: -2px;
+    margin-left: -3px;
+    margin-right: -3px;
+}
+
+#logo span:hover {
+    color: #222;
 }
 
 .pin_logo { 
@@ -61,12 +68,38 @@ a {
     margin-top: 10px; 
 }
 
+#top_menu a:hover {
+    color: #666 !important;
+}
 
-/* User Options */
+
+/* Log Out Button */
+#top_menu a[href="/logout/"] {
+    color: #222 !important;
+    font-weight: bold;
+}
+
+#top_menu a[href="/logout/"]:before {
+    content: "[";
+    color: #C0C0C0;
+}
+
+#top_menu a[href="/logout/"]:after {
+    content: "]";
+    color: #C0C0C0;
+}
+
+#top_menu a[href="/logout/"]:hover:before,
+#top_menu a[href="/logout/"]:hover:after {
+    color: #222;
+}
+
+/* User NavBar */
 .user_navbar a {
   color: #666 !important;
   display: inline-block;
   margin-top: 4px;
+  color: 
 }
 
 .user_navbar .filter::before {
@@ -80,7 +113,7 @@ a {
     margin-top: 0px;
     width: 45px;
     background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><circle fill="%23ee9922" cx="6.18" cy="17.82" r="2.18"/><path fill="%23ee9922" d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg>') no-repeat;
-    background-position: bottom right
+    background-position: bottom right;
 }
 
 .user_navbar .rss_link {
@@ -90,16 +123,76 @@ a {
     width: 45px;
 }
 
+/* Next/Prev Action Bar */
+
+#nextprev {
+    margin-top: 50px;
+    width: 606px;
+    border-bottom: 1px solid #DDD !important;
+    padding-bottom: 15px;
+}
+
+
+#nextprev #top_earlier,
+#nextprev #top_later { font-size: 18px; }
+
+#nextprev #top_earlier:hover,
+#nextprev #top_later:hover { color: #666 !important; }
+
 #bulk_edit { 
+    font-size: 13px;
     display: inline-block;
-    margin-left: 20px;
-}
-
-#bulk_edit:hover { 
+    margin-left: 270px;
     color: #222 !important;
+    font-weight: 900;
+    padding: 0 3px; !important;
 }
 
-#nextprev .edit:hover { color: #222 !important; }
+#bulk_edit:before {
+    content: "[";
+    color: #C0C0C0;
+    padding-right: 3px;
+    font-weight: 900;
+}
+
+#bulk_edit:after {
+    content: "]";
+    color: #C0C0C0;
+    padding-left: 3px;
+    font-weight: 900;
+    
+}
+
+#bulk_edit:hover:before,
+#bulk_edit:hover:after {
+    color: #222;
+}
+
+#nextprev .edit {
+    display: inline-block;
+    color: #222 !important;
+    font-size: 13px;
+    font-weight: 900;
+}
+
+#nextprev .edit:before {
+    content: "[";
+    color: #C0C0C0;
+    padding-right: 3px;
+    font-weight: 900;
+}
+
+#nextprev .edit:after {
+    content: "]";
+    color: #C0C0C0;
+    padding-left: 3px;
+    font-weight: 900;
+}
+
+#nextprev .edit:hover:before,
+#nextprev .edit:hover:after {
+    color: #222;
+}
 
 #timer {
   display: none !important;
@@ -173,7 +266,8 @@ input.reset:hover {
     float: right;
     padding-top: 3px;
     font-weight: 900;
-    color: #333;
+    color: #222;
+    font-style: italic;
     
     
 }
@@ -192,11 +286,7 @@ input.reset:hover {
     font-weight: normal;
 }
 
-/* Next/Prev Controls */
-.next_prev,
-#per_page_picker a {
-  font-size: 16px!important;
-}
+
 
 #pinboard_name {
   font-weight: 900!important;
@@ -291,7 +381,7 @@ input.reset:hover {
   visibility: hidden !important;
 }
 
-.bookmark .url_link {
+.bookmark .when, .bookmark .edit_links a, .bookmark .url_link {
     display: inline-block;
     margin-top: 10px;
 }
@@ -351,8 +441,14 @@ input.reset:hover {
   background-color: #777 !important;
   color: #FDFDFD !important;
   font-weight: 700 !important;
-  border: 1px solid #666;
+  border: 2px solid transparent;
   border-radius: 2px;
+}
+
+.tag:hover {
+    border-color: #222;
+    border-width: 2px;
+    border-radius: 3px;
 }
 
 .tag_table a {
