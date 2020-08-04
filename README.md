@@ -9,13 +9,13 @@ A [UserCSS](https://github.com/openstyles/stylus/wiki/UserCSS) compatible userst
 ![Stylus](/images/Stylus.png) Stylus for [Firefox](https://addons.mozilla.org/en-US/firefox/addon/styl-us/), [Chrome](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) or [Opera](https://addons.opera.com/en-gb/extensions/details/stylus/).<br>
 ![Cascadea](/images/Cascadea.png) Cascadea for [Safari](https://cascadea.app/).
 
-[![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-238b8b.svg)](https://raw.githubusercontent.com/michaeljaggers/better-pinboard/master/better-pinboard.user.css)
+[![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-238b8b.svg)](https://raw.githubusercontent.com/michaeljaggers/modern-pinboard/master/modern-pinboard.user.css)
 <br/>
 The stylesheet will be updated automaticaly by the addon.
 
-Style Preview:
+Preview —
 
-![Style Preview](https://github.com/michaeljaggers/better-pinboard/blob/master/images/preview.png)
+![Modern Pinboard Preview](https://raw.githubusercontent.com/michaeljaggers/modern-pinboard/master/images/modern-pinboard-preview.jpg)
 <br/>
 <br/>
 <br/>
