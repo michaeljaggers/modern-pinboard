@@ -265,6 +265,7 @@ a {
 
 .bookmark .display {
     position: relative;
+    width: 100%;
 }
 
 .bookmark_title  {
@@ -302,8 +303,8 @@ a {
 .description { 
     margin-top: 5px;
     line-height: 130%;
-    font-size: 15px;
-    color: #555;
+    font-size: 14px;
+    color: #666;
     margin-bottom: 0;
 }
 
@@ -336,10 +337,12 @@ a {
   color: #F7B42C !important;
 }
 
-.when,
-.edit_links,
+.bookmsrk .when,
+.bookmark .edit_links,
+.bookmark .edit_links a,
 .star,
-.bookmark .url_link {
+.bookmark .url_link,
+.bookmark .url_link a {
   visibility: hidden !important;
 }
 
@@ -359,11 +362,62 @@ a {
     content: "added "
 }
 
-.bookmark .edit_links a.edit:hover {
+.bookmark .edit_links {
+    float: right;
+}
+
+.bookmark .edit_links a.edit,
+.bookmark .edit_links a.delete {
+    color: #222 !important;
+    font-weight: 900;
+}
+
+.bookmark .edit_links a.edit:before,
+.bookmark .edit_links a.delete:before {
+    content: "[";
+    color: #C0C0C0;
+    margin-right: 3px;
+}
+
+.bookmark .edit_links a.edit:after,
+.bookmark .edit_links a.delete:after {
+    content: "]";
+    color: #C0C0C0;
+    margin-left: 3px;
+}
+
+.bookmark .edit_links a.edit:hover:before {
     color: #222 !important;
 }
 
-.bookmark .edit_links a.delete:hover {
+.bookmark .edit_links a.delete:hover:before{
+    color: #222 !important;
+}
+
+.bookmark .edit_links a.edit:hover:after,
+.bookmark .edit_links a.delete:hover:after {
+    color: #222 !important;
+}
+
+.bookmark .edit_links a.delete:hover:after{
+    color: #222 !important;
+}
+
+.bookmark .edit_links a.edit:hover,
+.bookmark .edit_links a.delete:hover{
+    color: #222 !important;
+}
+
+.bookmark .confirm {
+    color: #000 !important;
+    font-weight: 900
+}
+
+.bookmark .confirm a {
+    color: #666 !important;
+}
+
+.bookmark .confirm .destroy {
     color: #ff4242 !important;
 }
 
@@ -378,7 +432,8 @@ a {
 
 .bookmark:hover .when,
 .bookmark:hover .edit_links a,
-.bookmark:hover .url_link {
+.bookmark:hover .url_link,
+.bookmark:hover .url_link a {
   visibility: visible !important;
   
 }
