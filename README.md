@@ -1,8 +1,8 @@
 # Modern Pinboard
 
-*This stylesheet is a work-in-progress.*
+*A modern Pinboard user experience.*
 
-A UserCSS stylesheet customizing the design of social bookmarking site [pinboard.in](https://pinboard.in)
+UserCSS stylesheet customizing the design of social bookmarking site [pinboard.in](https://pinboard.in)
 
 A [UserCSS](https://github.com/openstyles/stylus/wiki/UserCSS) compatible userstyle manager is required.  These are recommended:
 
@@ -13,9 +13,12 @@ A [UserCSS](https://github.com/openstyles/stylus/wiki/UserCSS) compatible userst
 <br/>
 The stylesheet will be updated automaticaly by the addon.
 
-Preview —
+Preview:
 
 ![Modern Pinboard Preview](https://github.com/michaeljaggers/modern-pinboard/raw/master/images/modern-pinboard-final.jpg)
+<br/>
+<br/>
+![Add Bookmark Preview](https://github.com/michaeljaggers/modern-pinboard/raw/master/images/add-bookmark-preview.jpg)
 <br/>
 <br/>
 <br/>
