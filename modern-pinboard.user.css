@@ -1,14 +1,17 @@
 /* ==UserStyle==
-@name         Modern Pinboard
-@namespace    jaggers
-@version      1.0.0
-@preprocessor default
-@homepageURL  https://github.com/michaeljaggers/modern-pinboard
-@supportURL   https://github.com/michaeljaggers/modern-pinboard/issues
-@updateURL    https://raw.githubusercontent.com/michaeljaggers/modern-pinboard/master/modern-pinboard.user.css
-@license      CC-BY-SA-4.0
-@author       Michael Jaggers <michael.jaggers@gmail.com> (https://michaeljaggers.com)
+@name           Modern Pinboard
+@namespace      github.com/openstyles/stylus
+@version        1.0.0
+@description    a modern Pinboard user experience
+@author         Michael Jaggers <michael.jaggers@gmail.com> (https://michaeljaggers.com)
+@preprocessor   default
+@homepageURL    https://github.com/michaeljaggers/modern-pinboard
+@supportURL     https://github.com/michaeljaggers/modern-pinboard/issues
+@updateURL      https://raw.githubusercontent.com/michaeljaggers/modern-pinboard/master/modern-pinboard.user.css
+@license        CC-BY-SA-4.0
 ==/UserStyle== */
+
+@-moz-document domain("pinboard.in") {
 
 /* Global Styles */
 
@@ -54,10 +57,6 @@ body #logo {
     vertical-align: sub;
     font-weight: 900;
     color: #333 !important;
-}
-
-#pinboard_name { 
-    
 }
 
 #logo span { 
@@ -215,7 +214,6 @@ body #main_column {
     color: #222 !important;
 }
 
-
 #main_column .source_filter {
     background: transparent; 
     color: #C0C0C0;
@@ -293,7 +291,6 @@ body #main_column {
     color: #666 !important;
 }
 
-
 /* Bulk Edit Button */
 
 #bulk_edit { 
@@ -302,7 +299,7 @@ body #main_column {
     margin-left: 210px;
     color: #222 !important;
     font-weight: 900;
-    padding: 0 3px; !important;
+    padding: 0 3px !important;
     text-transform: none;
 }
 
@@ -364,8 +361,7 @@ body #main_column {
     padding-top: 15px;
     padding-bottom: 5px;
     border-bottom: 1px solid #DDD !important;
-    position: relative;
-    
+    position: relative; 
 }
 
 .bookmark .display {
@@ -406,8 +402,7 @@ body #main_column {
 
 .bookmark_title.unread,
 .bookmark_title.unread:visited {
-  color: #f08d00 !important;
-    
+  color: #f08d00 !important;   
 }
 
 .private {
@@ -461,8 +456,6 @@ body #main_column {
 .bookmark .source:hover:before {
     color: #666 !important;
 }
-
-
 
 .bookmark .display .tag {
     visibility: visible;
@@ -651,7 +644,6 @@ input.submit:hover {
 
 
 /* Search Section */
-
 #right_bar {
   margin-left: 0 !important;
   width: 350px;
@@ -735,12 +727,12 @@ textarea {
 }
 
 #tag_cloud_header a:hover {
-    color: #666 !important;;
+    color: #666 !important;
 }
 
 #tag_cloud_header .tag_heading_selected {
     color: #222 !important;
-    font-size: 16px
+    font-size: 16px;
 }
 
 #tag_cloud_header .tag_heading_selected:hover {
@@ -786,7 +778,6 @@ textarea {
 
 
 /* Tags */
-
 .tag,
 .per_page_selected {
   padding: 2px 6px;
@@ -831,7 +822,6 @@ textarea {
 }
 
 /* Profile Page - Main Column */
-
 #profile_main_column {
     margin-top: 50px;
 }
@@ -958,7 +948,7 @@ textarea {
     position: static !important;
     background: url('data:image/svg+xml;charset=UTF-8,<svg version="1.1" height="30" viewBox="0 0 32 32" width="150" xmlns="http://www.w3.org/2000/svg"><path d="m14.5 9.496-7-5.996v-3l-7 7h2.993l6.007 7v4l9.003-9z" fill="%232196f3"></path><path d="m7.885.057c-.28-.117-.604-.052-.818.163l-6.847 6.847c-.215.215-.279.537-.163.818.116.28.39.463.693.463h2.583l5.472 6.376v3.635c0 .669.81 1.001 1.28.53l3.326-3.326 9.343 8.248c.142.127.319.189.496.189.193 0 .386-.074.531-.221.28-.281.293-.732.028-1.028l-8.286-9.299 3.368-3.368c.215-.214.278-.537.163-.817-.116-.28-.39-.463-.692-.463l-3.64-.003-6.374-5.462v-2.589c0-.303-.183-.577-.463-.693zm6.072 10.063c.136.116.309.18.487.18l2.107.002-6.247 6.246v-2.103c0-.179-.064-.353-.181-.488l-5.876-6.848c-.143-.166-.351-.261-.569-.261h-1.117l4.287-4.287v1.124c0 .219.096.427.262.57z"></path></svg>') no-repeat;
     background-position: top 3px left -58px;
-    height: 30px
+    height: 30px;
 }
 
 #popup_header #logout {
@@ -990,4 +980,5 @@ input#url {
 
 input[name="title"] {
     margin-bottom: 5px !important;
+}
 }
