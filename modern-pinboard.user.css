@@ -200,8 +200,8 @@ body #main_column {
     font-size: 14px;    
 }
 
-#main_column > div > a:not(.rss_link):first-of-type:before, /* hide on /network  */,
-#main_column > p > a:first-of-type:before /* /history/all  |  /popular */ {
+#main_column > div > a:not(.rss_link):first-of-type:before,
+#main_column > p > a:first-of-type:before {
     content: "filters";
     display: inline-block;
     font-weight: 900;
