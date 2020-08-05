@@ -15,7 +15,7 @@ The stylesheet will be updated automaticaly by the addon.
 
 Preview —
 
-![Modern Pinboard Preview](https://raw.githubusercontent.com/michaeljaggers/modern-pinboard/master/images/modern-pinboard-preview.jpg)
+![Modern Pinboard Preview](https://github.com/michaeljaggers/modern-pinboard/raw/master/images/modern-pinboard-final.jpg)
 <br/>
 <br/>
 <br/>
