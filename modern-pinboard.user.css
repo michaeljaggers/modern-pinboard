@@ -20,6 +20,12 @@ a {
   color: #2196f3 !important;
 }
 
+input,
+textarea {
+    border: 1px solid #DDD !important;
+    border-radius: 2px !important;
+}
+
 /* Header */
 
 html body #banner { 
@@ -36,15 +42,22 @@ body #logo {
     position: static !important;
     background: url('data:image/svg+xml;charset=UTF-8,<svg version="1.1" height="30" viewBox="0 0 32 32" width="150" xmlns="http://www.w3.org/2000/svg"><path d="m14.5 9.496-7-5.996v-3l-7 7h2.993l6.007 7v4l9.003-9z" fill="%232196f3"></path><path d="m7.885.057c-.28-.117-.604-.052-.818.163l-6.847 6.847c-.215.215-.279.537-.163.818.116.28.39.463.693.463h2.583l5.472 6.376v3.635c0 .669.81 1.001 1.28.53l3.326-3.326 9.343 8.248c.142.127.319.189.496.189.193 0 .386-.074.531-.221.28-.281.293-.732.028-1.028l-8.286-9.299 3.368-3.368c.215-.214.278-.537.163-.817-.116-.28-.39-.463-.692-.463l-3.64-.003-6.374-5.462v-2.589c0-.303-.183-.577-.463-.693zm6.072 10.063c.136.116.309.18.487.18l2.107.002-6.247 6.246v-2.103c0-.179-.064-.353-.181-.488l-5.876-6.848c-.143-.166-.351-.261-.569-.261h-1.117l4.287-4.287v1.124c0 .219.096.427.262.57z"></path></svg>') no-repeat;
     background-position: top 3px left -58px;
+    height: 30px
 }
 
-#pinboard_name { 
-    font-size: 26px; 
-    margin-left: 35px; 
+#banner #logo { padding-left: 30px; }
+
+#banner #logo a:not(.banner_username):not([href="https://pinboard.in/note/add/"]) {
+    font-size: 26px !important; 
+    margin-left: 0; 
     margin-right: 10px;
     vertical-align: sub;
     font-weight: 900;
     color: #333 !important;
+}
+
+#pinboard_name { 
+    
 }
 
 #logo span { 
@@ -53,7 +66,7 @@ body #logo {
     font-weight: 900;
 }
 
-#logo .banner_username { 
+#banner #logo .banner_username { 
     color: #222 !important;
     font-weight: 900;
     padding: 0 6px; 
@@ -108,6 +121,7 @@ body #logo {
 
 .user_navbar {
     margin-top: 5px;
+    height: 25px;
 }
 
 .user_navbar a {
@@ -116,7 +130,7 @@ body #logo {
   margin-top: 4px;
 }
 
-.small_username b a {
+.small_username {
   display: none;
 }
 
@@ -127,36 +141,21 @@ body #main_column {
 }
 
 #main_column .user_navbar .bookmark_count_box {
-    width: 200px;
-}
-
-
-#main_column .bookmark_count_box {
-    width: 230px;
-}
-
-#main_column .bookmark_count_box::after {
-    content: "filters";
-    float: right;
-    padding-top: 3px;
-    font-weight: 900;
-    color: #222;
-    font-style: italic;
-    font-size: 14px;    
+    width: 240px;
 }
 
 #main_column .bookmark_count { 
-    font-size: 20px; 
-    color: #000;
-    font-weight: 800
+    font-size: 22px; 
+    color: #555;
+    font-weight: 800;
 }
 
 #main_column .bookmark_count::after {
-    content: "bookmarks";
-    padding-left: 5px;
+    content: "Bookmarks";
+    padding-left: 6px;
     color: #555;
-    font-size: 16px;
-    font-weight: normal;
+    font-size: 22px;
+    font-weight: 900;
 }
 
 #main_column > b {
@@ -169,14 +168,47 @@ body #main_column {
     display: none;
 }
 
+/* /network */
 #main_column > b:before {
     content: "You";
-    display: inine-block !important;
+    display: inline-block !important;
 }
 
 
-.user_navbar .filter::before {
-    content: 
+#main_column a[style="font-size:140%"] {
+    display: inline-block;
+    text-align: left;
+    width: 210%;
+    font-weight: 900;
+    font-size: 22px !important;
+    color: #222 !important;
+    margin-top: 15px;
+}
+
+#main_column form[action="/url/"] {
+    margin-bottom: 10px;
+}
+
+/* Filters Addon */
+#main_column .bookmark_count_box::after {
+    content: "filters";
+    float: right;
+    padding-top: 3px;
+    font-weight: 900;
+    color: #222;
+    font-style: italic;
+    font-size: 14px;    
+}
+
+#main_column > div > a:not(.rss_link):first-of-type:before, /* hide on /network  */,
+#main_column > p > a:first-of-type:before /* /history/all  |  /popular */ {
+    content: "filters";
+    display: inline-block;
+    font-weight: 900;
+    color: #222;
+    font-style: italic;
+    font-size: 14px;
+    padding-right: 20px;
 }
 
 .user_navbar .filter:hover {
@@ -184,11 +216,25 @@ body #main_column {
 }
 
 
+#main_column .source_filter {
+    background: transparent; 
+    color: #C0C0C0;
+}
+
+#main_column .source_filter a {
+    color: #222 !important;
+    font-weight: 900;
+    padding: 0 3px;
+}
+
+/* RSS */
+
 .rss_linkbox { 
     margin-top: 9px;
     width: 45px;
     background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><circle fill="%23ee9922" cx="6.18" cy="17.82" r="2.18"/><path fill="%23ee9922" d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg>') no-repeat;
     background-position: bottom right;
+    
 }
 
 .rss_link {
@@ -198,6 +244,7 @@ body #main_column {
     width: 45px;
 }
 
+/* User Page RSS */
 .user_navbar .rss_linkbox {
     margin-top: 0;
     margin-right: -60px;
@@ -211,7 +258,9 @@ body #main_column {
 }
 
 #main_column > .rss_linkbox {
-    position: absolute; top: 1px; right: 0;
+    position: absolute;
+    top: 1px;
+    right: 0;
 }
 
 
@@ -222,7 +271,6 @@ body #main_column {
     margin-top: 30px;
     padding-bottom: 17px;
     width: 606px;
-    border-bottom: 1px solid #DDD !important;
 }
 
 /* Next/Prev Action Bar w/ Edit Buttons*/
@@ -230,16 +278,20 @@ body #main_column {
 #nextprev {
     margin-top: 50px;
     width: 606px;
-    border-bottom: 1px solid #DDD !important;
     padding-bottom: 15px;
 }
 
 
 #nextprev #top_earlier,
-#nextprev #top_later { font-size: 18px; }
+#nextprev #top_later {
+    font-size: 18px;
+    text-transform: none;
+}
 
 #nextprev #top_earlier:hover,
-#nextprev #top_later:hover { color: #666 !important; }
+#nextprev #top_later:hover {
+    color: #666 !important;
+}
 
 
 /* Bulk Edit Button */
@@ -247,10 +299,11 @@ body #main_column {
 #bulk_edit { 
     font-size: 13px;
     display: inline-block;
-    margin-left: 290px;
+    margin-left: 210px;
     color: #222 !important;
     font-weight: 900;
     padding: 0 3px; !important;
+    text-transform: none;
 }
 
 #bulk_edit:before {
@@ -264,8 +317,7 @@ body #main_column {
     content: "]";
     color: #C0C0C0;
     padding-left: 3px;
-    font-weight: 900;
-    
+    font-weight: 900; 
 }
 
 #bulk_edit:hover:before,
@@ -274,12 +326,12 @@ body #main_column {
 }
 
 /* Organize Button */
-
 #nextprev .edit {
     display: inline-block;
     color: #222 !important;
     font-size: 13px;
     font-weight: 900;
+    text-transform: none;
 }
 
 #nextprev .edit:before {
@@ -302,67 +354,118 @@ body #main_column {
 }
 
 /* Site Speed */
-
 #timer {
   display: none !important;
 }
 
 
 /* Bookmarks */
-
 .bookmark { 
     padding-top: 15px;
     padding-bottom: 5px;
     border-bottom: 1px solid #DDD !important;
     position: relative;
+    
 }
 
 .bookmark .display {
     position: relative;
     width: 100%;
+    color: #666;
+    font-weight: 300;
+}
+
+.bookmark .display a {
+    font-weight: 600;
 }
 
 .bookmark_title  {
   color: #222 !important;
-  font-weight: bold!important;
-  font-size: 20px!important;
+  font-weight: bold !important;
+  font-size: 19px !important;
   display: inline-block;
-  width: 580px
+  width: 580px;
+  visibility: visible;
+  margin-bottom: 3px;
 }
 
-.bookmark .bookmark_count {
+#main_column .bookmark .bookmark_count {
     clear: left;
     display: block;
-    
     font-size: 20px !important;
+    visibility: visible;
+    font-weight: 400 !important;
+}
+
+#main_column .bookmark .bookmark_count:after {
+    content: "people added";
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: lowercase;
 }
 
 .bookmark_title.unread,
 .bookmark_title.unread:visited {
-  color: #FF9113!important;
+  color: #f08d00 !important;
+    
 }
 
 .private {
   background: transparent !important;
   border: none !important;
+  border-bottom: 1px solid #DDD !important;
 }
 
 .private .bookmark_title {
-  color: #FF2E54 !important;
+  color: #f0120d !important;
 }
 
+.private .tag {
+    padding: 2px 6px;
+}
 
 .bookmark .url_display {
     display: inline-block;
     margin-bottom: 10px;
+    visibility: visible;
+    font-weight: 400 !important;
+    font-size: 12px;
 }
 
 .description { 
-    margin-top: -0px;
+    margin-top: 0;
     line-height: 130%;
     font-size: 14px;
     color: #666;
+    font-weight: 300;
     margin-bottom: 10px;
+    visibility: visible;
+}
+
+.description a {
+    font-weight: 300 !important;
+}
+
+.bookmark .source {
+    font-weight: 400 !important;
+    color: #C0C0C0 !important;
+}
+
+.bookmark .source:before {
+    content: "→ ";
+    font-weight: 300 !important;
+    color: #C0C0C0 !important;
+}
+
+.bookmark .source:hover,
+.bookmark .source:hover:before {
+    color: #666 !important;
+}
+
+
+
+.bookmark .display .tag {
+    visibility: visible;
 }
 
 .star {
@@ -375,8 +478,8 @@ body #main_column {
 }
 
 .bookmark:hover .star {
-  visibility: visible!important;
-  color: #ccc!important;
+  visibility: visible !important;
+  color: #CCC !important;
 }
 
 .bookmark:hover .selected_star:hover,
@@ -384,6 +487,7 @@ body #main_column {
   visibility: visible !important;
   color: #F7B42C !important;
 }
+
 .bookmark:hover .star:hover {
   visibility: visible !important;
   color: #F7B42C !important;
@@ -394,7 +498,8 @@ body #main_column {
   color: #F7B42C !important;
 }
 
-/* # Others Also Linked */
+
+/* Number Others Linked */
 .url_link { 
     background: transparent !important; 
     color: #666 !important; 
@@ -414,20 +519,29 @@ body #main_column {
   visibility: hidden !important;
 }
 
-.bookmark .when, .bookmark .edit_links a, .bookmark .url_link {
+.bookmark .when,
+.bookmark .edit_links a,
+.bookmark .url_link {
     display: inline-block;
     padding-top: 5px;
 }
 
 .bookmark .when {
   display: inline-block;
-  font-size: 11px;
-  font-weight: 900;
-  color: #555 !important;
+  font-size: 13px;
+  font-weight: 300 !important;
+  padding-right: 10px;
+  color: #666 !important;
+  visibility: visible !important;
 }
 
-.bookmark:hover .when::before {
+.bookmark .url_link {
+    visibility: visible !important;
+    font-weight: 300 !important;
+}
 
+.bookmark .when:hover {
+    color: #222 !important;
 }
 
 .bookmark .edit_links {
@@ -438,14 +552,16 @@ body #main_column {
 
 .bookmark .edit_links a.edit,
 .bookmark .edit_links a.delete,
-.bookmark .edit_links a.copy_link {
+.bookmark .edit_links a.copy_link,
+.bookmark .edit_links a.mark_read {
     color: #222 !important;
     font-weight: 900;
 }
 
 .bookmark .edit_links a.edit:before,
 .bookmark .edit_links a.delete:before,
-.bookmark .edit_links a.copy_link:before {
+.bookmark .edit_links a.copy_link:before,
+.bookmark .edit_links a.mark_read:before {
     content: "[";
     color: #C0C0C0;
     margin-right: 3px;
@@ -453,7 +569,8 @@ body #main_column {
 
 .bookmark .edit_links a.edit:after,
 .bookmark .edit_links a.delete:after,
-.bookmark .edit_links a.copy_link:after{
+.bookmark .edit_links a.copy_link:after,
+.bookmark .edit_links a.mark_read:after {
     content: "]";
     color: #C0C0C0;
     margin-left: 3px;
@@ -461,30 +578,34 @@ body #main_column {
 
 .bookmark .edit_links a.edit:hover:before,
 .bookmark .edit_links a.delete:hover:before,
-.bookmark .edit_links a.copy_link:hover:before {
+.bookmark .edit_links a.copy_link:hover:before,
+.bookmark .edit_links a.mark_read:hover:before {
     color: #222 !important;
 }
 
 
 .bookmark .edit_links a.edit:hover:after,
 .bookmark .edit_links a.delete:hover:after,
-.bookmark .edit_links a.copy_link:hover:after {
+.bookmark .edit_links a.copy_link:hover:after,
+.bookmark .edit_links a.mark_read:hover:after {
     color: #222 !important;
 }
 
 .bookmark .edit_links a.edit:hover,
 .bookmark .edit_links a.delete:hover,
-.bookmark .edit_links a.copy_link:hover {
+.bookmark .edit_links a.copy_link:hover,
+.bookmark .edit_links a.mark_read:hover {
     color: #222 !important;
 }
 
 .bookmark .confirm {
     color: #000 !important;
-    font-weight: 900
+    font-weight: 900;
 }
 
 .bookmark .confirm a {
     color: #666 !important;
+    visibility: visible !important;
 }
 
 .bookmark .confirm .destroy {
@@ -497,9 +618,11 @@ body #main_column {
     padding-top: 3px;
 }
 
-.bookmark:hover .when { left: 0; }
+.bookmark:hover .when {
+    left: 0;
+}
 
-
+.bookmark:hover .display,
 .bookmark:hover .when,
 .bookmark:hover .edit_links a,
 .bookmark:hover .url_link,
@@ -554,6 +677,7 @@ input.reset {
   background: #333 !important;
   color: #FFF !important;
   font-weight: bold !important;
+  margin-bottom: 5px;
 }
 
 input[type="submit"]:hover {
@@ -563,19 +687,28 @@ input[type="submit"]:hover {
 input[type="button"],
 input.submit,
 input.reset {
-  background: #EEEEEE!important;
-  color: #555!important;
+  background: #EEE !important;
+  color: #555 !important;
 }
 
 input,
 textarea {
-  padding: 7px 8px!important;
-  border: 1px solid #ddd;
-  border-radius: 3px!important;
-  color: #555!important;
-  font-weight: bold!important;
+  padding: 7px 8px !important;
+  border: 1px solid #DDD;
+  border-radius: 2px !important;
+  color: #555 !important;
+  font-weight: bold !important;
 }
 
+
+/* /network */
+#right_bar > p > b {
+    text-transform: capitalize;
+    font-size: 20px;
+    color: #666;
+    display: inline-block;
+    margin-top: 20px;
+}
 
 
 /* Tag Section */
@@ -591,9 +724,6 @@ textarea {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-}
-
-#tag_cloud_header a {
 }
 
 #tag_cloud_header a:before {
@@ -632,7 +762,7 @@ textarea {
 }
 
 #tag_cloud_header p a:last-of-type:before {
-       content: "[";
+    content: "[";
     color: #C0C0C0 !important;
     padding-right: 3px;
     font-weight: 900;
@@ -674,13 +804,16 @@ textarea {
 }
 
 .tag_table a {
-  display: block!important;
-  margin-bottom: 3px!important;
-  color: #FF9113!important;
-  font-weight: normal!important;
-  font-size: 16px!important;
-  line-height: 100%!important;
-  border-radius: 3px!important;
+  padding: 2px 6px;
+  background-color: #777 !important;
+  display: inline-block !important;
+  margin-bottom: 3px !important;
+  color: #FDFDFD !important;
+  font-weight: bold !important;
+  font-size: 16px !important;
+  line-height: 100% !important;
+  border-radius: 2px !important;
+  opacity: 1.0 !important;
 }
 
 
@@ -716,47 +849,69 @@ textarea {
 
 #main_column > p:first-of-type {
     display: inline-block;
-    width: 606px;
+    width: 300px;
     height: 95px;
-    border-bottom: 1px solid #DDD !important;
-
 }
 
-
+/* /history/all */
 #main_column > p > b {
+    display: block;
     font-size: 22px;
     text-transform: capitalize;
     color: #555;
+    margin-right: 0;
+    width: 300px;
+    margin-bottom: 10px;
 }
 
-#main_column > p > b:after {
+/* /history/all */
+#main_column > p > a[style="color:#aaaaaa"] {
+    display: inline-block;
+}
+
+
+
+#main_column > p > a[style="color:#aaaaaa"]:before {
     content: "filters";
     padding-top: 3px;
     font-weight: 900;
     color: #222;
     font-style: italic;
     font-size: 14px;
-    margin-left: 60px;
+    margin-left: -15px;
+    margin-right: 10px;
 }
 
-#main_column > p:nth-child(2) {
-    display: block;
-    width: auto;
-    position: absolute;
-    top: 5px;
-    right: 190px;
-    text-align: right;
+
+/* /popular filters location */
+#main_column > p:nth-of-type(2) {
+    display: inline-block;
+    width: 100%;
+}
+
+#main_column > p:nth-of-type(2) a[href="/popular"]:before {
+    content: "filters";
+    padding-top: 3px;
+    padding-left: 30px;
+    font-weight: 900;
+    color: #222;
+    font-style: italic;
+    font-size: 14px;
+    margin-left: 0;
+    margin-right: 20px;
 }
 
 #main_column > p > a {
-    display: inline;
+    display: inline-block;
     font-size: 13px;
     color: #666 !important;
+    margin-top: -40px;
 }
 
 #main_column > p > a:hover {
     color: #222 !important;
 }
+
 
 
 /* Popular Page - Tag Cloud */
@@ -765,11 +920,20 @@ textarea {
     color: #222;
 }
 
+/* Popular Article Page Tag Cloud */
+#right_bar #tag_cloud p[style="color:#888"] {
+    font-size: 16px;
+    color: #222 !important;
+    font-weight: bold;
+}
+
 
 /* Public Profile Page */
+
 #public_profile_searchbox input[type="submit"] {
     margin-top: 10px;
 }
+
 
 /* Add A Bookmark */
 
@@ -778,7 +942,43 @@ textarea {
     margin-bottom: 30px;
 }
 
+#popup_header #title {
+    font-size: 14px;
+    font-weight: 900;
+    color: #666;
+}
+
+#popup_header #title a {
+    font-size: 26px !important; 
+    padding-left: 35px; 
+    margin-right: 10px;
+    vertical-align: sub;
+    font-weight: 900;
+    color: #333 !important;
+    position: static !important;
+    background: url('data:image/svg+xml;charset=UTF-8,<svg version="1.1" height="30" viewBox="0 0 32 32" width="150" xmlns="http://www.w3.org/2000/svg"><path d="m14.5 9.496-7-5.996v-3l-7 7h2.993l6.007 7v4l9.003-9z" fill="%232196f3"></path><path d="m7.885.057c-.28-.117-.604-.052-.818.163l-6.847 6.847c-.215.215-.279.537-.163.818.116.28.39.463.693.463h2.583l5.472 6.376v3.635c0 .669.81 1.001 1.28.53l3.326-3.326 9.343 8.248c.142.127.319.189.496.189.193 0 .386-.074.531-.221.28-.281.293-.732.028-1.028l-8.286-9.299 3.368-3.368c.215-.214.278-.537.163-.817-.116-.28-.39-.463-.692-.463l-3.64-.003-6.374-5.462v-2.589c0-.303-.183-.577-.463-.693zm6.072 10.063c.136.116.309.18.487.18l2.107.002-6.247 6.246v-2.103c0-.179-.064-.353-.181-.488l-5.876-6.848c-.143-.166-.351-.261-.569-.261h-1.117l4.287-4.287v1.124c0 .219.096.427.262.57z"></path></svg>') no-repeat;
+    background-position: top 3px left -58px;
+    height: 30px
+}
+
+#popup_header #logout {
+    color: #C0C0C0;
+    font-weight: 900;
+}
+
+#popup_header #logout:hover {
+    color: #222;
+}
+
+#popup_header #logout a {
+    color: #222 !important;
+    padding: 0 3px;
+}
+
+
 table tbody tr td {
+    display: table-cell !important;
+    vertical-align: top;
     font-weight: 900;
     text-transform: capitalize;
     padding-right: 20px !important;
