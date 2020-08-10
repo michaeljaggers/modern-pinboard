@@ -14,7 +14,6 @@
 @-moz-document domain("pinboard.in") {
 
 /* Global Styles */
-
 body { 
     background-color: #FEFEFE; 
 }
@@ -117,10 +116,15 @@ body #logo {
 }
 
 /* User NavBar */
-
-.user_navbar {
+#main_column .user_navbar {
     margin-top: 5px;
     height: 25px;
+    position: relative;
+}
+
+#main_column .user_navbar .small_username {
+    position: absolute;
+    top: 30px;
 }
 
 .user_navbar a {
@@ -129,9 +133,7 @@ body #logo {
   margin-top: 4px;
 }
 
-.small_username {
-  display: none;
-}
+
 
 body #main_column {
     margin: 0 !important;
@@ -140,26 +142,30 @@ body #main_column {
 }
 
 #main_column .user_navbar .bookmark_count_box {
-    width: 240px;
+    width: 200px;
 }
 
+/* main column heading - bookmark count */
 #main_column .bookmark_count { 
     font-size: 22px; 
     color: #555;
     font-weight: 800;
+    display: inline-block;
+    width: 300px;
 }
 
 #main_column .bookmark_count::after {
-    content: "Bookmarks";
+    content: "bookmarks";
     padding-left: 6px;
     color: #555;
     font-size: 22px;
     font-weight: 900;
 }
 
+
+/* main column heading - network */
 #main_column > b {
     font-size: 22px;
-    text-transform: capitalize;
     color: #555;
 }
 
@@ -167,13 +173,16 @@ body #main_column {
     display: none;
 }
 
-/* /network */
 #main_column > b:before {
-    content: "You";
+    content: "you";
     display: inline-block !important;
 }
 
+#main_column > p > b > a {
+    color: #555 !important;
+}
 
+/* main column heading -  */
 #main_column a[style="font-size:140%"] {
     display: inline-block;
     text-align: left;
@@ -184,30 +193,9 @@ body #main_column {
     margin-top: 15px;
 }
 
+
 #main_column form[action="/url/"] {
     margin-bottom: 10px;
-}
-
-/* Filters Addon */
-#main_column .bookmark_count_box::after {
-    content: "filters";
-    float: right;
-    padding-top: 3px;
-    font-weight: 900;
-    color: #222;
-    font-style: italic;
-    font-size: 14px;    
-}
-
-#main_column > div > a:not(.rss_link):first-of-type:before,
-#main_column > p > a:first-of-type:before {
-    content: "filters";
-    display: inline-block;
-    font-weight: 900;
-    color: #222;
-    font-style: italic;
-    font-size: 14px;
-    padding-right: 20px;
 }
 
 .user_navbar .filter:hover {
@@ -291,26 +279,27 @@ body #main_column {
     color: #666 !important;
 }
 
-/* Bulk Edit Button */
-
-#bulk_edit { 
+/* Bulk Edit Button  - Edit button */
+#bulk_edit,
+#main_column > p > a.edit { 
     font-size: 13px;
     display: inline-block;
-    margin-left: 210px;
     color: #222 !important;
     font-weight: 900;
     padding: 0 3px !important;
     text-transform: none;
 }
 
-#bulk_edit:before {
+#bulk_edit:before,
+#main_column > p > a.edit:before {
     content: "[";
     color: #C0C0C0;
     padding-right: 3px;
     font-weight: 900;
 }
 
-#bulk_edit:after {
+#bulk_edit:after,
+#main_column > p > a.edit:after {
     content: "]";
     color: #C0C0C0;
     padding-left: 3px;
@@ -318,11 +307,35 @@ body #main_column {
 }
 
 #bulk_edit:hover:before,
-#bulk_edit:hover:after {
+#bulk_edit:hover:after,
+#main_column > p > a.edit:hover:before,
+#main_column > p > a.edit:hover:after {
     color: #222;
 }
 
-/* Organize Button */
+/*  sort order */
+#sort_order_picker a {
+    color: #666 !important;
+}
+
+#sort_order_picker a:hover {
+    color: #222 !important;
+}
+
+#sort_order_picker .sort_arrow {
+    font-size: 20px;
+    vertical-align: top;
+}
+
+/* edit - organize buttons */
+#nextprev table tbody tr td {
+    display: table-cell !important;
+    vertical-align: top;
+    font-weight: 900;
+    width: 200px;
+    padding-right: 20px !important;
+}
+
 #nextprev .edit {
     display: inline-block;
     color: #222 !important;
@@ -385,6 +398,7 @@ body #main_column {
   margin-bottom: 3px;
 }
 
+/* /popular bookmarks */
 #main_column .bookmark .bookmark_count {
     clear: left;
     display: block;
@@ -394,17 +408,19 @@ body #main_column {
 }
 
 #main_column .bookmark .bookmark_count:after {
-    content: "people added";
+    content: "people added"; /* only affects /popular */
     font-size: 14px;
     font-weight: normal;
     text-transform: lowercase;
 }
 
+/* unread bookmark */
 .bookmark_title.unread,
 .bookmark_title.unread:visited {
   color: #f08d00 !important;   
 }
 
+/* private bookmark */
 .private {
   background: transparent !important;
   border: none !important;
@@ -695,16 +711,27 @@ textarea {
 
 /* /network */
 #right_bar > p > b {
-    text-transform: capitalize;
-    font-size: 20px;
+    font-size: 22px;
     color: #666;
     display: inline-block;
     margin-top: 20px;
 }
 
+/* tag bundles */
+#bundle_names > p > a {
+    color: #666 !important;
+    font-size: 16px;
+}
+
+#bundle_names > p > a:hover {
+    color: #222 !important;
+}
+
+#bundle_names > p > a.bundle {
+    color: #222 !important;
+}
 
 /* Tag Section */
-
 #tag_cloud_header {
     font-size: 14px;
     color: transparent;  
@@ -712,13 +739,13 @@ textarea {
 }
 
 #tag_cloud_header p {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
-#tag_cloud_header a:before {
+#tag_cloud_header p > a:before {
     content: "•";
     font-size: 9px;
     color: #000 !important;
@@ -726,7 +753,11 @@ textarea {
     vertical-align: middle;
 }
 
-#tag_cloud_header a:hover {
+#tag_cloud_header a.tag.selected:before {
+    content: none;
+}
+
+#tag_cloud_header p > a:hover {
     color: #666 !important;
 }
 
@@ -792,6 +823,7 @@ textarea {
     border-color: #545454;
     border-width: 2px;
     border-radius: 3px;
+    color: #FDFDFD !important;
 }
 
 .tag_table a {
@@ -816,7 +848,6 @@ textarea {
 
 
 /* Footer */
-
 #footer {
   visibility: hidden;
 }
@@ -824,6 +855,10 @@ textarea {
 /* Profile Page - Main Column */
 #profile_main_column {
     margin-top: 50px;
+}
+
+p[style="color:#aaa"] {
+    display: none;
 }
 
 /* History Page - Main Column */
@@ -839,57 +874,30 @@ textarea {
 
 #main_column > p:first-of-type {
     display: inline-block;
-    width: 300px;
+    width: 100%;
     height: 95px;
 }
 
 /* /history/all */
 #main_column > p > b {
-    display: block;
+    display: inline-block;
     font-size: 22px;
-    text-transform: capitalize;
     color: #555;
     margin-right: 0;
     width: 300px;
     margin-bottom: 10px;
 }
 
-/* /history/all */
-#main_column > p > a[style="color:#aaaaaa"] {
-    display: inline-block;
-}
 
-
-
-#main_column > p > a[style="color:#aaaaaa"]:before {
-    content: "filters";
-    padding-top: 3px;
-    font-weight: 900;
-    color: #222;
-    font-style: italic;
-    font-size: 14px;
-    margin-left: -15px;
-    margin-right: 10px;
-}
-
-
-/* /popular filters location */
+/* /popular - filters location */
 #main_column > p:nth-of-type(2) {
     display: inline-block;
     width: 100%;
+    position: absolute;
+    top: 8px;
+    right: -300px;
 }
 
-#main_column > p:nth-of-type(2) a[href="/popular"]:before {
-    content: "filters";
-    padding-top: 3px;
-    padding-left: 30px;
-    font-weight: 900;
-    color: #222;
-    font-style: italic;
-    font-size: 14px;
-    margin-left: 0;
-    margin-right: 20px;
-}
 
 #main_column > p > a {
     display: inline-block;
@@ -919,7 +927,6 @@ textarea {
 
 
 /* Public Profile Page */
-
 #public_profile_searchbox input[type="submit"] {
     margin-top: 10px;
 }
@@ -970,7 +977,6 @@ table tbody tr td {
     display: table-cell !important;
     vertical-align: top;
     font-weight: 900;
-    text-transform: capitalize;
     padding-right: 20px !important;
 }
 
