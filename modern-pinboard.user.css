@@ -1,5 +1,5 @@
 /* ==UserStyle==
-@name           Modern Pinboard
+@name           Modern Pinboard (Beta)
 @namespace      github.com/openstyles/stylus
 @version        1.0.0
 @description    a modern Pinboard user experience
@@ -7,7 +7,7 @@
 @preprocessor   default
 @homepageURL    https://github.com/michaeljaggers/modern-pinboard
 @supportURL     https://github.com/michaeljaggers/modern-pinboard/issues
-@updateURL      https://raw.githubusercontent.com/michaeljaggers/modern-pinboard/master/modern-pinboard.user.css
+@updateURL      https://raw.githubusercontent.com/michaeljaggers/modern-pinboard/beta/modern-pinboard.user.css
 @license        CC-BY-SA-4.0
 ==/UserStyle== */
 
@@ -931,6 +931,12 @@ p[style="color:#aaa"] {
     margin-top: 10px;
 }
 
+} /* END moz-document | pinboard.in */
+
+
+
+
+@-moz-document domain("pinboard.in/add*") {
 
 /* Add A Bookmark */
 
@@ -987,4 +993,5 @@ input#url {
 input[name="title"] {
     margin-bottom: 5px !important;
 }
-}
+
+} /* END moz-document | pinboard.in/add* */
