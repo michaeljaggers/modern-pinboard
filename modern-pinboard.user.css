@@ -918,11 +918,40 @@ input,
 textarea {
     border: 1px solid #DDD !important;
     border-radius: 2px !important;
+    padding: 10px;
+    max-width: 495px;
+    margin-bottom: 5px;
 }
+    
+input:focus-visible,
+textarea:focus-visible {
+    outline: none;
+    border-color: #2196F3 !important;
+    border-radius: 2px
+}
+
+p.error {
+    display: block;
+    font-size: 36px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 80px;
+ }
+    
+p.error:after {
+    display: block;
+    margin-top: 20px;
+    content: "You should be ashamed of yourself.";
+    font-size: 15px;
+    text-transform: none;
+    color: #333;
+    font-style: italic;
+ }
     
 #popup_header {
     display: block;
     padding-bottom: 16px;
+    margin-bottom: 15px;
     border-bottom: 1px solid #C0C0C0 !important;
 }
 
@@ -967,11 +996,12 @@ textarea {
     background-color: #f8d7da;
     text-transform: capitalize;
     text-align: center;padding: 8px;
-    width: 250px;
+    width: 300px;
     border-radius: 2px;
 }
    
-#popup_header .alert > div:first-child a {
+#popup_header .alert > div:first-child a,
+#popup_header .delete_div a {
     display: inline-block;
     margin-left: 10px;
     color: #721c24 !important;
@@ -988,17 +1018,55 @@ textarea {
 
 table tbody tr td {
     display: table-cell !important;
-    vertical-align: top;
+    vertical-align: middle !important;
+    text-transform: capitalize;
+    color: #333;
+    font-size: 14px;
     font-weight: 900;
     padding-right: 20px !important;
 }
 
-input#url {
-    margin-bottom: 5px !important;
+#suggestion_row td:not(#suggested) {
+    visibility: hidden;        
 }
-
-input[name="title"] {
-    margin-bottom: 5px !important;
+    
+#suggested {
+    max-width: 120px;        
 }
-
+    
+input[name="private"],
+label[for="private"],
+input[name="toread"],
+label[for="toread"] {
+   margin-top: 20px;     
+}
+    
+input[type="submit"] {
+    padding: 8px 21px 8px !important;
+    border: none !important;
+    border-radius: 2px !important;
+    background: #333 !important;
+    color: #FFF !important;
+    font-weight: bold !important;
+    font-size: 16px;
+    margin-bottom: 0px;
+    text-transform: capitalize;
+    float: right;
+    cursor: pointer;
+    transform: translateY(-30px);
+}
+    
+form > div:not(.pin-ac) {
+    width: 630px !important;
+    font-size: 16px;
+}
+    
+form > div:not(.pin-ac) a {
+    color: #2196F3 !important;        
+}
+    
+form > div:not(.pin-ac) a:hover {
+    color: #666 !important;        
+}
+    
 } /* END moz-document | pinboard.in/add* */
