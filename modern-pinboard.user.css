@@ -906,8 +906,18 @@ p[style="color:#aaa"] {
 
 } /* END moz-document | pinboard.in */
 
-@-moz-document domain("pinboard.in/add*") {
 
+
+
+@-moz-document url-prefix("pinboard.in/add") {
+
+/* Global Styles */
+input,
+textarea {
+    border: 1px solid #DDD !important;
+    border-radius: 2px !important;
+}
+    
 #popup_header {
     display: block;
     margin-bottom: 30px;
