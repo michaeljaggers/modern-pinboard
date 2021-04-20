@@ -11,7 +11,7 @@
 @license        CC-BY-SA-4.0
 ==/UserStyle== */
 
-@-moz-document domain("pinboard.in") {
+@-moz-document regexp('http://pinboard\\.in/(?!add).*'), regexp('https://pinboard\\.in/(?!add).*') {
 
 /* Global Styles */
 body { 
@@ -909,7 +909,7 @@ p[style="color:#aaa"] {
 
 
 
-@-moz-document url-prefix("pinboard.in/add") {
+@-moz-document regexp('http://pinboard\\.in/add.*'), regexp('https://pinboard\\.in/add.*') {
 
 /* Global Styles */
 input,
