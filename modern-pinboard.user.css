@@ -29,7 +29,8 @@ textarea {
 }
 
 /* Header */
-html body #banner { 
+html body #banner {
+    padding-top: 12px;
     padding-bottom: 12px;
     background-color: #FEFEFE;
     background: #FEFEFE;
