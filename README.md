@@ -15,10 +15,10 @@ The stylesheet will be updated automaticaly by the addon.
 
 Preview:
 
-![Modern Pinboard Preview](https://github.com/michaeljaggers/modern-pinboard/raw/master/images/modern-pinboard-final.jpg)
+![Modern Pinboard Preview](https://github.com/michaeljaggers/modern-pinboard/raw/master/images/modern-pinboard-final.png)
 <br/>
 <br/>
-![Add Bookmark Preview](https://github.com/michaeljaggers/modern-pinboard/raw/master/images/add-bookmark-preview.jpg)
+![Add Bookmark Preview](https://github.com/michaeljaggers/modern-pinboard/raw/master/images/add-bookmark-preview.png)
 <br/>
 <br/>
 <br/>
