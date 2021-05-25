@@ -1,17 +1,17 @@
 /* ==UserStyle==
-@name           Modern Pinboard
+@name           Modern Pinboard (Beta)
 @namespace      github.com/openstyles/stylus
-@version        1.0.0
+@version        1.1.0
 @description    a modern Pinboard user experience
 @author         Michael Jaggers <michael.jaggers@gmail.com> (https://michaeljaggers.com)
 @preprocessor   default
 @homepageURL    https://github.com/michaeljaggers/modern-pinboard
 @supportURL     https://github.com/michaeljaggers/modern-pinboard/issues
-@updateURL      https://raw.githubusercontent.com/michaeljaggers/modern-pinboard/master/modern-pinboard.user.css
+@updateURL      https://raw.githubusercontent.com/michaeljaggers/modern-pinboard/beta/modern-pinboard.user.css
 @license        CC-BY-SA-4.0
 ==/UserStyle== */
 
-@-moz-document domain("pinboard.in") {
+@-moz-document regexp('http://pinboard\\.in/(?!add).*'), regexp('https://pinboard\\.in/(?!add).*') {
 
 /* Global Styles */
 body { 
@@ -29,7 +29,6 @@ textarea {
 }
 
 /* Header */
-
 html body #banner { 
     padding-bottom: 12px;
     background-color: #FEFEFE;
@@ -39,7 +38,6 @@ html body #banner {
 }
 
 /* Logo/User */
-
 body #logo { 
     position: static !important;
     background: url('data:image/svg+xml;charset=UTF-8,<svg version="1.1" height="30" viewBox="0 0 32 32" width="150" xmlns="http://www.w3.org/2000/svg"><path d="m14.5 9.496-7-5.996v-3l-7 7h2.993l6.007 7v4l9.003-9z" fill="%232196f3"></path><path d="m7.885.057c-.28-.117-.604-.052-.818.163l-6.847 6.847c-.215.215-.279.537-.163.818.116.28.39.463.693.463h2.583l5.472 6.376v3.635c0 .669.81 1.001 1.28.53l3.326-3.326 9.343 8.248c.142.127.319.189.496.189.193 0 .386-.074.531-.221.28-.281.293-.732.028-1.028l-8.286-9.299 3.368-3.368c.215-.214.278-.537.163-.817-.116-.28-.39-.463-.692-.463l-3.64-.003-6.374-5.462v-2.589c0-.303-.183-.577-.463-.693zm6.072 10.063c.136.116.309.18.487.18l2.107.002-6.247 6.246v-2.103c0-.179-.064-.353-.181-.488l-5.876-6.848c-.143-.166-.351-.261-.569-.261h-1.117l4.287-4.287v1.124c0 .219.096.427.262.57z"></path></svg>') no-repeat;
@@ -47,7 +45,9 @@ body #logo {
     height: 30px
 }
 
-#banner #logo { padding-left: 30px; }
+#banner #logo { 
+    padding-left: 30px;
+}
 
 #banner #logo a:not(.banner_username):not([href="https://pinboard.in/note/add/"]) {
     font-size: 26px !important; 
@@ -82,7 +82,6 @@ body #logo {
 }
 
 /* Main Navigation */
-
 #banner #top_menu { 
     margin-top: 10px;
     display: block !important;
@@ -92,9 +91,7 @@ body #logo {
     color: #666 !important;
 }
 
-
 /* Log Out Button */
-
 #top_menu a[href="/logout/"] {
     color: #222 !important;
     font-weight: bold;
@@ -133,8 +130,6 @@ body #logo {
   margin-top: 4px;
 }
 
-
-
 body #main_column {
     margin: 0 !important;
     width: 606px;
@@ -161,7 +156,6 @@ body #main_column {
     font-size: 22px;
     font-weight: 900;
 }
-
 
 /* main column heading - network */
 #main_column > b {
@@ -193,7 +187,6 @@ body #main_column {
     margin-top: 15px;
 }
 
-
 #main_column form[action="/url/"] {
     margin-bottom: 10px;
 }
@@ -214,13 +207,11 @@ body #main_column {
 }
 
 /* RSS */
-
 .rss_linkbox { 
     margin-top: 9px;
     width: 45px;
     background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><circle fill="%23ee9922" cx="6.18" cy="17.82" r="2.18"/><path fill="%23ee9922" d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg>') no-repeat;
     background-position: bottom right;
-    
 }
 
 .rss_link {
@@ -249,9 +240,7 @@ body #main_column {
     right: 0;
 }
 
-
 /* Next/Prev from /network page */
-
 #top_next_prev {
     font-size: 18px;
     margin-top: 30px;
@@ -260,13 +249,11 @@ body #main_column {
 }
 
 /* Next/Prev Action Bar w/ Edit Buttons*/
-
 #nextprev {
     margin-top: 50px;
     width: 606px;
     padding-bottom: 15px;
 }
-
 
 #nextprev #top_earlier,
 #nextprev #top_later {
@@ -367,7 +354,6 @@ body #main_column {
 #timer {
   display: none !important;
 }
-
 
 /* Bookmarks */
 .bookmark { 
@@ -507,7 +493,6 @@ body #main_column {
   color: #F7B42C !important;
 }
 
-
 /* Number Others Linked */
 .url_link { 
     background: transparent !important; 
@@ -592,7 +577,6 @@ body #main_column {
     color: #222 !important;
 }
 
-
 .bookmark .edit_links a.edit:hover:after,
 .bookmark .edit_links a.delete:hover:after,
 .bookmark .edit_links a.copy_link:hover:after,
@@ -658,7 +642,6 @@ input.submit:hover {
     color: #FFF !important;
 }
 
-
 /* Search Section */
 #right_bar {
   margin-left: 0 !important;
@@ -707,7 +690,6 @@ textarea {
   color: #555 !important;
   font-weight: bold !important;
 }
-
 
 /* /network */
 #right_bar > p > b {
@@ -807,7 +789,6 @@ textarea {
     color: #222 !important;
 }
 
-
 /* Tags */
 .tag,
 .per_page_selected {
@@ -839,13 +820,11 @@ textarea {
   opacity: 1.0 !important;
 }
 
-
 #edit_bookmark_form input {
   line-height: 1.8!important;
   font-size: 110%!important;
   padding-top: 0.35rem!important;
 }
-
 
 /* Footer */
 #footer {
@@ -865,7 +844,6 @@ p[style="color:#aaa"] {
 #main_column {
     position: relative;
 }
-
 
 #main_column > p {
     display: inline-block;
@@ -888,7 +866,6 @@ p[style="color:#aaa"] {
     margin-bottom: 10px;
 }
 
-
 /* /popular - filters location */
 #main_column > p:nth-of-type(2) {
     display: inline-block;
@@ -897,7 +874,6 @@ p[style="color:#aaa"] {
     top: 8px;
     right: -300px;
 }
-
 
 #main_column > p > a {
     display: inline-block;
@@ -909,8 +885,6 @@ p[style="color:#aaa"] {
 #main_column > p > a:hover {
     color: #222 !important;
 }
-
-
 
 /* Popular Page - Tag Cloud */
 #tag_cloud > p > b {
@@ -925,24 +899,45 @@ p[style="color:#aaa"] {
     font-weight: bold;
 }
 
-
 /* Public Profile Page */
 #public_profile_searchbox input[type="submit"] {
     margin-top: 10px;
 }
 
+} /* END moz-document | pinboard.in */
 
-/* Add A Bookmark */
 
+@-moz-document regexp('http://pinboard\\.in/add.*'), regexp('https://pinboard\\.in/add.*') {
+
+/* Global Styles */
+* {
+    transition: background 0.25s, border 0.25s, color 0.25s;
+    font-family: "Helvetica" !important;
+    line-height: 1.5;
+    font-size: 16px;
+
+}
+    
+body {
+    background-color: #FEFEFE;
+}
+    
+input,
+textarea {
+    border: 1px solid #BBB !important;
+    border-radius: 2px !important;
+}
+    
 #popup_header {
     display: block;
-    margin-bottom: 30px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #C0C0C0 !important;
 }
 
 #popup_header #title {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 900;
-    color: #666;
+    color: #222;
 }
 
 #popup_header #title a {
@@ -959,8 +954,13 @@ p[style="color:#aaa"] {
 }
 
 #popup_header #logout {
+    margin-top: 10px;
     color: #C0C0C0;
     font-weight: 900;
+}
+    
+#popup_header #logout a {
+    font-size: 13px !important;;        
 }
 
 #popup_header #logout:hover {
@@ -971,7 +971,31 @@ p[style="color:#aaa"] {
     color: #222 !important;
     padding: 0 3px;
 }
+    
+#popup_header .alert {
+    color: #721c24;
+    border-color: #f5c6cb;
+    background-color: #f8d7da;
+    text-transform: capitalize;
+    text-align: center;padding: 8px;
+    width: 250px;
+    border-radius: 2px;
+}
+   
+#popup_header .alert > div:first-child a {
+    display: inline-block;
+    margin-left: 10px;
+    color: #721c24 !important;
+    font-weight: 900;   
+}
+    
+#popup_header .alert > div:first-child a:hover {
+    text-decoration: underline;
+}
 
+#popup_header .alert > div:first-child a:after {
+    content: "?"
+}
 
 table tbody tr td {
     display: table-cell !important;
@@ -979,12 +1003,90 @@ table tbody tr td {
     font-weight: 900;
     padding-right: 20px !important;
 }
+    
+input:not([type="checkbox"], [type="submit"]),
+textarea {
+    width: 520px;
+    padding: 6px
+}
 
 input#url {
+    margin-top: 5px;
     margin-bottom: 5px !important;
+    font-size: 13px;
+    color: #555;
 }
-
+    
 input[name="title"] {
     margin-bottom: 5px !important;
+    font-size: 13px;
+    color: #555;
 }
+    
+textarea[name="description"] {
+    font-size: 14px;
+    color: #555;
+    height: 80px !important;
 }
+    
+input[name="tags"] {
+    font-size: 13px;  
+    color: #555;
+    margin-bottom: 5px;
+}
+    
+input:focus,
+select:focus,
+textarea:focus {
+    outline-color: #2196f3;       
+}
+  
+/* style the auto-complete tag popup */
+.bd { 
+   border: none !important;
+   box-shadow: none !important;
+   width: 250px !important;
+   margin: -3px 0 0 8px !important;
+   padding: 4px 0 !important;
+   background-color: rgba(255,255,255,0.90) !important;
+}
+   .bd li  {
+      font-size: 14px !important;
+      font-weight: 500;
+      color: #2196f3 !important;
+      background-color: transparent !important;
+      transition: none;
+      padding: 2px 4px !important;
+   }
+   .bd li.active  {
+      color: white !important;
+      background-color: #2196f3 !important;
+   }
+
+#suggestion_row {
+    margin-bottom: 10px !important;        
+}
+    
+.suggested_tag {
+    color: #2196f3; 
+}
+    
+label[for="private"],
+label[for="toread"] {
+    vertical-align: text-bottom;        
+}
+    
+input[type="submit"] {
+    float: right;
+    padding: 8px 21px 8px !important;
+    border: none !important;
+    border-radius: 2px !important;
+    background: #333 !important;
+    color: #FFF !important;
+    font-weight: bold !important;
+    text-transform: capitalize;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+} /* END moz-document | pinboard.in/add* */
